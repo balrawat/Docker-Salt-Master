@@ -5,6 +5,8 @@
 FROM ubuntu:18.04
 MAINTAINER Balvinder <bal.rawat@gmail.com>
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 # Update System
 RUN apt-get update && apt-get upgrade -y -o DPkg::Options::=--force-confold
 
