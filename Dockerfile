@@ -19,10 +19,6 @@ RUN apt-get update
 
 RUN apt-get install -y salt-master salt-minion
 
-# Volumes
-
-VOLUME ['/etc/salt/pki', '/var/cache/salt', '/var/logs/salt', '/etc/salt/master.d', '/srv/salt']
-
 # Add Run File
 
 ADD run.sh /usr/local/bin/run.sh
