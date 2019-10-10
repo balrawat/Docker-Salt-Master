@@ -10,7 +10,7 @@ RUN apt-get update && apt-get upgrade -y -o DPkg::Options::=--force-confold
 
 # Add PPA
 
-RUN apt-get install -y software-properties-common dmidecode
+RUN apt-get install -y software-properties-common dmidecode wget
 RUN echo "deb http://repo.saltstack.com/py3/ubuntu/18.04/amd64/2019.2 bionic main" >> /etc/apt/sources.list.d/saltstack.list
 RUN wget -O - https://repo.saltstack.com/py3/ubuntu/18.04/amd64/2019.2/SALTSTACK-GPG-KEY.pub | apt-key add -
 RUN apt-get update
