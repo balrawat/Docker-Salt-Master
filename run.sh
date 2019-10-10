@@ -7,7 +7,7 @@
 set -e
 
 # Log Level
-LOG_LEVEL=${LOG_LEVEL:-"error"}
+LOG_LEVEL=${LOG_LEVEL:-"debug"}
 
 # Run Salt as a Deamon
 exec sudo /usr/bin/salt-master --log-level=$LOG_LEVEL
