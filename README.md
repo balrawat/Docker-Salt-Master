@@ -6,7 +6,7 @@ A Docker image which allows you to run a containerised Salt-Master server.
 
 You can easily run the container like so:
 
-    docker run --rm -it soon/salt-master
+    docker run --rm -it bsrawat/docker-salt-master
 
 ## Environment Variables
 
@@ -14,17 +14,22 @@ The following environment variables can be set:
 
 * `LOG_LEVEL`: The level to log at, defaults to `error`
 
-## Volumes
 
-There are several volumes which can be mounted to Docker data container as
+~~## Volumes~~
+
+~~There are several volumes which can be mounted to Docker data container as
 described here: https://docs.docker.com/userguide/dockervolumes/. The following
-volumes can be mounted:
+volumes can be mounted:~~
 
- * `/etc/salt/pki` - This holds the Salt Minion authentication keys
- * `/var/cache/salt` - Job and Minion data cache
- * `/var/logs/salt` - Salts log directory
- * `/etc/salt/master.d` - Master configuration include directory
- * `/srv/salt` - Holds your states, pillars etc
+ ~~* `/etc/salt/pki` - This holds the Salt Minion authentication keys~~
+ 
+ ~~* `/var/cache/salt` - Job and Minion data cache~~
+ 
+ ~~* `/var/logs/salt` - Salts log directory~~
+ 
+ ~~* `/etc/salt/master.d` - Master configuration include directory~~
+ 
+ ~~* `/srv/salt` - Holds your states, pillars etc~~
 
 ### Data Container
 
@@ -38,7 +43,7 @@ This will create a stopped container with the name of `salt-master-data` and
 will hold our persistant salt master data. Now we just need to run our master
 container with the `--volumes-from` command:
 
-    docker run --rm -it --volumes-from salt-master-data soon/salt-master
+    docker run --rm -it --volumes-from salt-master-data bsrawat/docker-salt-master
 
 ### Sharing Local Folders
 
